@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+      <% temp = 4 %>
+      <% @m.each do |m| %>
+          <% if temp != m.term %>
+          <hr width = "90%">
+          <% end %>
+          <div class="col-sm-3">
+            <div class="card" style="width: 16rem; margin-top: 1rem; margin-bottom: 1rem;">
+              <img class="card-img-top" src="/assets/replace.svg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= m.name %></h5>
+                <p class="card-text"><%= m.term %>기</p>
+              </div>
+            </div>
+          </div>
+          <% temp = m.term %>
+      <% end %>
+    </div>
+</div>

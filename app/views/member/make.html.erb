@@ -1,0 +1,36 @@
+<h1>멤버 설정 페이지</h1>
+<hr/>
+
+<h2>멤버 추가하기</h2>
+<form action="/save" method="get">
+    이름 : <input type="text" name="name"></input>
+    깃수 : <input type="number" name="term"></input>
+    <input type="submit" value="submit">
+</form>
+<hr/>
+
+<h2>멤버 정보 수정, 삭제하기</h2>
+<div class="container">
+    <div class="row">
+      <% temp = 4 %>
+      <% @m.each do |m| %>
+          <% if temp != m.term %>
+          <hr width = "90%">
+          <% end %>
+          <div class="col-sm-3">
+            <div class="card" style="width: 16rem; margin-top: 1rem; margin-bottom: 1rem;">
+              <img class="card-img-top" src="/assets/replace.svg" alt="Card image cap">
+              <div class="card-body">
+                <form action="/update_member/<%= m.id %>" method="get">
+                    <input type="text" name="name" value="<%= m.name %>">
+                    <input type="text" name="term" value="<%= m. term %>">
+                    <input type="submit" value="수정확인">
+                </form>
+                <a href="delete_member/<%= m.id %>"><p>삭제</p></a>
+              </div>
+            </div>
+          </div>
+          <% temp = m.term %>
+      <% end %>
+    </div>
+</div>
