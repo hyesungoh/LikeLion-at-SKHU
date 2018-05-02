@@ -1,24 +1,17 @@
+# LikeLion at SKHU
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+성공회대 멋쟁이사자처럼 사이트
 
+## Built With
 
-Welcome to your Rails project on Cloud9 IDE!
+* [Bootstrap](https://getbootstrap.com/) - front-end
+* [Ruby on Rails](https://github.com/rails/rails) - framework
 
-To get started, just do the following:
+## Developers
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
+* **[Hyesung Oh](https://github.com/hyesungoh)** - *Back-end*
 
-Happy coding!
-The Cloud9 IDE team
+## Version
 
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+* Ruby 2.3.4
+* Rails 4.2.5
