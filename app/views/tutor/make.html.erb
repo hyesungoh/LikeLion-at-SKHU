@@ -1,2 +1,38 @@
-<h1>Tutor#make</h1>
-<p>Find me in app/views/tutor/make.html.erb</p>
+<h1>운영진 설정 페이지</h1>
+<hr/>
+
+<h2>운영진 추가하기</h2>
+<form action="/save_tutor" method="get">
+    이름 : <input type="text" name="name"></input>
+    운영 깃수 : <input type="number" name="term"></input>
+    배운 깃수 : <input type="number" name="learning_term"></input>
+    <input type="submit" value="submit">
+</form>
+<hr/>
+
+<h2>운영진 정보 수정, 삭제하기</h2>
+<div class="container">
+    <div class="row">
+      <% temp = 4 %>
+      <% @t.each do |t| %>
+          <% if temp != t.term %>
+          <hr width = "90%">
+          <% end %>
+          <div class="col-sm-3">
+            <div class="card" style="width: 16rem; margin-top: 1rem; margin-bottom: 1rem;">
+              <img class="card-img-top" src="/assets/replace.svg" alt="Card image cap">
+              <div class="card-body">
+                <form action="/update_member/<%= t.id %>" method="get">
+                    <input type="text" name="name" value="<%= t.name %>">
+                    <input type="text" name="term" value="<%= t.term %>">
+                    <input type="text" name="learning_term" value="<%= t.learning_term %>">
+                    <input type="submit" value="수정확인">
+                </form>
+                <a href="delete_member/<%= t.id %>"><p>삭제</p></a>
+              </div>
+            </div>
+          </div>
+          <% temp = t.term %>
+      <% end %>
+    </div>
+</div>

@@ -1,2 +1,21 @@
-<h1>Tutor#index</h1>
-<p>Find me in app/views/tutor/index.html.erb</p>
+<div class="container">
+    <div class="row">
+      <% temp = 4 %>
+      <% @t.each do |t| %>
+          <% if temp != t.term %>
+          <hr width = "90%">
+          <% end %>
+          <div class="col-sm-3">
+            <div class="card" style="width: 16rem; margin-top: 1rem; margin-bottom: 1rem;">
+              <img class="card-img-top" src="/assets/replace.svg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= t.name %></h5>
+                <p class="card-text"><%= t.learning_term %>기에 배워 <%= t.term %>기 운영진으로 활동</p>
+                
+              </div>
+            </div>
+          </div>
+          <% temp = t.term %>
+      <% end %>
+    </div>
+</div>
