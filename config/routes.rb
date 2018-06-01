@@ -31,8 +31,7 @@ Rails.application.routes.draw do
   
   get '/delete_portfolio/:port_id' => 'port#delete'
   
-  get '/save_portfolio' => 'port#save'
-  
+  post '/save_portfolio' => 'port#save'
   
   root 'main#index'
 end
