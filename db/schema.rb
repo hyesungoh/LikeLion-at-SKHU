@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180501055602) do
   create_table "members", force: :cascade do |t|
     t.string   "name"
     t.integer  "term"
+    t.integer  "istutor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,14 +24,6 @@ ActiveRecord::Schema.define(version: 20180501055602) do
   create_table "ports", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tutors", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "term"
-    t.integer  "learning_term"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
 end
