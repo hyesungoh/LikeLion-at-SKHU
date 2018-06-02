@@ -13,6 +13,11 @@
                 <p class="card-text"><%= member.term %>기</p>
                 
                 <!-- modal button-->
+                
+                <!--todo :
+                  - 각 반복문 마다 modal 만드는데
+                    모달 id 뒤에 멤버 id 로 조작할 수 있게 ㅇㅋ?
+                -->
                 <%= 
                 button_tag class: "btn btn-primary",
                 data: { toggle: "modal", target: "#exampleModal", 

@@ -64,9 +64,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         </button>
       </div>
       <div class="modal-body">
-        <% if defined? modal_member %>
         <p> <%= modal_member.name %> </p>
-        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
