@@ -13,11 +13,15 @@
                 <p class="card-text"><%= member.term %>기</p>
                 
                 <!-- modal button-->
-                <%= button_tag "Open modal", class: "btn btn-primary",
+                <%= 
+                button_tag class: "btn btn-primary",
                 data: { toggle: "modal", target: "#exampleModal", 
-                name: member.name } %>
+                name: member.name } do
+                  modal_member = Member.find(member.id)
+                  content_tag(:b, 'Open Modal')
+                end
                 
-                
+                %>
                 
               </div>
             </div>
