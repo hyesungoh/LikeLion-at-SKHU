@@ -1,10 +1,10 @@
 class MemberController < ApplicationController
   def index
-    @m = Member.all.order(:term)
+    @members = Member.all.order(:term)
   end
   
   def make
-    @m = Member.all.order(:term)
+    @members = Member.all.order(:term)
   end
   
   def save

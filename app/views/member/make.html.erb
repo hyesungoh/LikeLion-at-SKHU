@@ -14,25 +14,25 @@
 <div class="container">
     <div class="row">
       <% temp = 4 %>
-      <% @m.each do |m| %>
-          <% if temp != m.term %>
+      <% @members.each do |member| %>
+          <% if temp != member.term %>
           <hr width = "90%">
           <% end %>
           <div class="col-sm-3">
             <div class="card" style="width: 16rem; margin-top: 1rem; margin-bottom: 1rem;">
               <img class="card-img-top" src="/assets/replace.svg" alt="Card image cap">
               <div class="card-body">
-                <form action="/update_member/<%= m.id %>" method="get">
-                    <input type="text" name="name" value="<%= m.name %>">
-                    <input type="text" name="term" value="<%= m.term %>">
-                    <input type="text" name="istutor" value="<%= m.istutor %>">
+                <form action="/update_member/<%= member.id %>" method="get">
+                    <input type="text" name="name" value="<%= member.name %>">
+                    <input type="text" name="term" value="<%= member.term %>">
+                    <input type="text" name="istutor" value="<%= member.istutor %>">
                     <input type="submit" value="수정확인">
                 </form>
                 <a href="delete_member/<%= m.id %>"><p>삭제</p></a>
               </div>
             </div>
           </div>
-          <% temp = m.term %>
+          <% temp = member.term %>
       <% end %>
     </div>
 </div>

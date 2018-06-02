@@ -1,28 +1,28 @@
 <div class="container">
     <div class="row">
       <% temp = 4 %>
-      <% @m.each do |m| %>
-          <% if temp != m.term %>
+      <% @members.each do |member| %>
+          <% if temp != member.term %>
           <hr width = "90%">
           <% end %>
           <div class="col-sm-3">
             <div class="card" style="width: 16rem; margin-top: 1rem; margin-bottom: 1rem;">
               <img class="card-img-top" src="/assets/replace.svg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title"><%= m.name %></h5>
-                <p class="card-text"><%= m.term %>기</p>
+                <h5 class="card-title"><%= member.name %></h5>
+                <p class="card-text"><%= member.term %>기</p>
                 
                 <!-- modal button-->
-                <button type="button" class="btn btn-primary"
-                        data-toggle="modal" data-target="#exampleModal" data-whatever="<%= m.name %>">
-                        Open modal
-                </button>
+                <%= button_tag "Open modal", class: "btn btn-primary",
+                data: { toggle: "modal", target: "#exampleModal", 
+                name: member.name } %>
+                
                 
                 
               </div>
             </div>
           </div>
-          <% temp = m.term %>
+          <% temp = member.term %>
       <% end %>
     </div>
 </div>

@@ -1,6 +1,5 @@
 <!--
 todo :
-    - 포트폴리오 생성 시 여러명 선택할 수 있게
     - 멤버별 modal에 프로젝트 보여줄 수 있게
     - 멤버멸 content 추가
 
@@ -23,7 +22,8 @@ todo :
             <div class="card-footer text-muted align-middle">
                 <% port.members.each do |member| %>
                 <span class="align-middle"
-                data-toggle="modal" data-target="#exampleModal" data-whatever="<%= member.name %>">
+                data-toggle="modal" data-target="#exampleModal"
+                data-name="<%= member.name %>">
                 <%= member.name %></span>
                 <% end %>
             </div>
