@@ -8,15 +8,21 @@ class PortController < ApplicationController
   end
 
   def save
-    p = Port.new
-    p.title = params[:title]
-    p.content = params[:content]
+    # @p = params
     
-    m = Member.find_by name: params[:members]
-    p.members << m
-    p.save
+    portfolio = Port.new
+    portfolio.title = params[:title]
+    portfolio.content = params[:content]
     
-    redirect_to '/portfolios'
+    # "members"=>{"5"=>"아무개", "2"=>"김세훈", "1"=>"오혜성"}
+    members = params[:members]
+    members.each do |id, m_name|
+      member = Member.find_by name: m_name
+      portfolio.members << member
+    end
+    portfolio.save
+    
+    redirect_to '/portfolio_setting'
   end
 
   def update
