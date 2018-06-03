@@ -29,17 +29,31 @@
 
 <% @members.each do |member| %>
 <!-- modal -->
-<div class="modal fade" id="Modal<%= member.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="Modal<%= member.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">
+            멋쟁이 사자처럼 <%= member.term %>기, <%= member.name %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p> <%= member.name %> </p>
+        <% if member.istutor > 0 %>
+            <p>멋쟁이 사자처럼 <%= member.term %>기에 배워 <%= member.istutor %>기 운영진으로 활동</p>
+        <% else %>
+            <p>멋쟁이 사자처럼 <%= member.term %>기 학생</p>
+        <% end %>
+        <h5 class="modal-title" id="exampleModalLabel"> 참여 프로젝트 </h5>
+        <% member.ports.each do |port| %>
+        <table class="table">
+            <tr>
+                <th><%= port.title %></th>
+                <td><%= port.content %></td>
+            </tr>
+        </table>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

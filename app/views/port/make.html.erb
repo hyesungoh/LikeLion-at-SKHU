@@ -31,3 +31,17 @@
 </div>
 <div class="col-sm-2"></div>
 </div>
+<hr/>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+  <h2>포트폴리오 삭제하기</h2>
+  <ul class="list-group">
+  <% @portfolios.each do |port| %>
+    <li class="list-group-item"><a href="/delete_portfolio/<%= port.id %>"><%= port.title %></a></li>
+  <% end %>
+  </ul>
+  </div>
+  <div class="col-sm-2"></div>
+</div>

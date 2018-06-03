@@ -5,6 +5,7 @@ class PortController < ApplicationController
   end
 
   def make
+    @portfolios = Port.all
     @m = Member.all.order(:term)
   end
 
@@ -30,5 +31,9 @@ class PortController < ApplicationController
   end
 
   def delete
+    portfolio = Port.find(params[:port_id])
+    portfolio.destroy
+    
+    redirect_to '/portfolio_setting'
   end
 end
