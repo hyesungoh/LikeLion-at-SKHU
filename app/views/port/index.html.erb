@@ -1,11 +1,4 @@
-<!--
-todo :
-    - 멤버별 modal에 프로젝트 보여줄 수 있게
-        - button_tag 를 통해 modal_member 변수를 넘기던가
-        - rails modal 로 완전히 바꾸던가 구조 변환 
-    - 멤버멸 content 추가
 
--->
 <% @ports.each do |port| %>
 <br/>
 <div class="row">
@@ -24,8 +17,7 @@ todo :
             <div class="card-footer text-muted align-middle">
                 <% port.members.each do |member| %>
                 <span class="align-middle"
-                data-toggle="modal" data-target="#exampleModal"
-                data-name="<%= member.name %>">
+                data-toggle="modal" data-target="#Modal<%=member.id%>">
                 <%= member.name %></span>
                 <% end %>
             </div>
@@ -33,4 +25,28 @@ todo :
     </div>
     <div class="col-sm-2"></div>
 </div>
+<% end %>
+
+<% @members.each do |member| %>
+<!-- modal -->
+<div class="modal fade" id="Modal<%= member.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> <%= member.name %> </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal end -->
+
 <% end %>

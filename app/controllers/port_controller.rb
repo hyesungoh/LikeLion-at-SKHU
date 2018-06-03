@@ -1,6 +1,7 @@
 class PortController < ApplicationController
   def index
     @ports = Port.all
+    @members = Member.all
   end
 
   def make
