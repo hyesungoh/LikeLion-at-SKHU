@@ -6,8 +6,11 @@
     <div class="col-sm-8">
         <div class="card mb-3">
             
-            <img class="card-img-top" src="/assets/port_sample.svg" alt="Card image cap">
-    
+            <% if port.img.nil? %>
+              <img class="card-img-top" src="/assets/port_sample.svg" alt="None Image for this project">
+            <% else %>
+              <img class="card-img-top" src="<%= port.img %>" alt="<%= port.title %>">
+            <% end %>
             <div class="card-body">
                 <h5 class="card-title"><%= port.title %></h5>
                 <p class="card-text"><%= port.content %></p>
@@ -46,14 +49,16 @@
             <p>멋쟁이 사자처럼 <%= member.term %>기 학생</p>
         <% end %>
         <h5 class="modal-title" id="exampleModalLabel"> 참여 프로젝트 </h5>
-        <% member.ports.each do |port| %>
+        
         <table class="table">
+          <% member.ports.each do |port| %>
             <tr>
                 <th><%= port.title %></th>
                 <td><%= port.content %></td>
             </tr>
+          <% end %>
         </table>
-        <% end %>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

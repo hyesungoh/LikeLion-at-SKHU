@@ -3,7 +3,7 @@ class CreatePorts < ActiveRecord::Migration
     create_table :ports do |t|
       t.string :title
       t.text :content
-      t.string :img
+      t.string :img, default: ""
       
       t.timestamps null: false
     end

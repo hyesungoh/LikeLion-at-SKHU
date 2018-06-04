@@ -22,8 +22,12 @@ class PortController < ApplicationController
       member = Member.find_by name: m_name
       portfolio.members << member
     end
-    portfolio.save
     
+    uploader = ImguploaderUploader.new
+    uploader.store!(params[:img])
+    portfolio.img = uploader.url
+    
+    portfolio.save
     redirect_to '/portfolio_setting'
   end
 
