@@ -19,9 +19,9 @@
                     모달 id 뒤에 멤버 id 로 조작할 수 있게 ㅇㅋ?
                 -->
                 <%= 
-                button_tag class: "btn btn-primary",
+                button_tag class: "btn btn-outline-secondary",
                 data: { toggle: "modal", target: "#Modal" + member.id.to_s } do
-                  content_tag(:b, 'Open Modal')
+                  content_tag(:strong, 'View detail')
                 end
                 
                 %>

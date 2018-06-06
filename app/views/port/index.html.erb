@@ -19,9 +19,9 @@
             
             <div class="card-footer text-muted align-middle">
                 <% port.members.each do |member| %>
-                <span class="align-middle"
+                <a href="#" class="text-muted"
                 data-toggle="modal" data-target="#Modal<%=member.id%>">
-                <%= member.name %></span>
+                <%= member.name %></a>
                 <% end %>
             </div>
         </div>
